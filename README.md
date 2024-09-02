@@ -1,1 +1,1 @@
-A simple HTML/JS/CSS starter template
+New portfolio, going vanilla to start.
