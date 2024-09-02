@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World</title>
+  <link href='/style.css' rel='stylesheet'>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+  <h1 >Hello, world!</h1>
+  <nav>
+    <a href="#page1">Page 1</a>
+    <a href="#page2">Page 2</a>
+  </nav>
+  <main>
+    <slot ></slot>
+  
+  <div id="page1" class="page active" >
+    <h2>Page 1 Content</h2>
+    <p>This is the content of page 1.</p>
+  </div>
+  <div id="page2" class="page">
+    <h2>Page 2 Content</h2>
+    <p>This is the content of page 2.</p>
+  </div>
+  <page-transition>
+    <div class="loader" ></div> 
+  </page-transition>
+</main>
+<div x-data="{ count: 0 }" >
+  <button x-on:click="count++">Press me</button>
+  <span x-show="count" x-text="count" x-transition:enter="fade" x-transition:leave="fade" ></span>
+</div>
+  <script defer type="text/javascript" src="/main.js"></script>
+  <script defer type="text/javascript" src="/page-transition.js"></script>
+</body>
+</html>
