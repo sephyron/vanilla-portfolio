@@ -28,10 +28,12 @@
     <div class="loader" ></div> 
   </page-transition>
 </main>
+<!-- Alpine.js -->
 <div x-data="{ count: 0 }" >
   <button x-on:click="count++">Press me</button>
   <span x-show="count" x-text="count" x-transition:enter="fade" x-transition:leave="fade" ></span>
 </div>
+<!-- End Alpine.js -->
   <script defer type="text/javascript" src="/main.js"></script>
   <script defer type="text/javascript" src="/page-transition.js"></script>
 </body>
