@@ -1,1 +1,0 @@
-:root{--primary-color: #666;--font-size: 16px;--border-radius: 3px}body{font:var(--font-size) sans-serif;margin:0;padding:0}nav{padding:1rem}nav a{margin-right:.4rem;text-decoration:none}.page{display:none;padding:1rem}.page.active{display:block}main{padding:1rem}

@@ -10,16 +10,20 @@ class PageTransition extends HTMLElement {
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(256, 256, 256, 0.5);
-            display: none;
+            background-color: rgba(256, 256, 256, 0.05);
+            display: flex;
             z-index: 1000; /* Ensure it's on top */
-            transition: opacity 0.3s ease-in-out;
+            transition: transform opacity 1s ease-in-out;
+            transform: translate(5rem, 0);
             opacity: 0;
+            height: 0;
           }
   
           :host(.active) {
-            display: block;
+            display: flex;
             opacity: 1;
+            height: 100%;
+            transform: translate(0);
           }
         </style>
         <slot></slot> 
@@ -28,6 +32,7 @@ class PageTransition extends HTMLElement {
   
     show() {
       this.classList.add('active');
+      
     }
   
     hide() {

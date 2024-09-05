@@ -13,11 +13,11 @@ navLinks.forEach(link => {
     pages.forEach(page => page.classList.remove('active'));
 
     // Show transition
-    transition.show();
+    //transition.show();
 
     setTimeout(() => {
       targetPage.classList.add('active');
-      transition.hide();
+      //transition.hide();
     }, 200); // Adjust the delay as needed
   });
 });

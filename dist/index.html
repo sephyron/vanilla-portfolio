@@ -3,37 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>\\Portfolio\Angel</title>
   <script type="module" defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script type="module" crossorigin src="/assets/index-Brqwc8IF.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CQlqa39Q.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script type="module" crossorigin src="/assets/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/main.css">
 </head>
 <body>
-  <h1 >Hello, world!</h1>
+  <h1 >\\Angel</h1>
   <nav>
-    <a href="#page1">Page 1</a>
-    <a href="#page2">Page 2</a>
+    <a href="#page1">About</a>
+    <a href="#page2">Projects</a>
+    <a href="#page3">Thoughts</a>
   </nav>
   <main>
+    <!-- Alpine.js -->
+  <div x-data="{ count: 0 }" >
+    <button x-on:click="count++">Press me</button>
+    <span x-show="count" x-text="count" x-transition:enter="fade" x-transition:leave="fade" ></span>
+  </div>
+<!-- End Alpine.js -->
     <slot ></slot>
   
   <div id="page1" class="page active" >
-    <h2>Page 1 Content</h2>
+    <h2>\About</h2>
     <p>This is the content of page 1.</p>
   </div>
   <div id="page2" class="page">
-    <h2>Page 2 Content</h2>
+    <h2>\Projects</h2>
     <p>This is the content of page 2.</p>
+  </div>
+  <div id="page3" class="page">
+    <h2>\Thoughts</h2>
+    <p>This is the content of page 3.</p>
   </div>
   <page-transition>
     <div class="loader" ></div> 
   </page-transition>
 </main>
-<!-- Alpine.js -->
-<div x-data="{ count: 0 }" >
-  <button x-on:click="count++">Press me</button>
-  <span x-show="count" x-text="count" x-transition:enter="fade" x-transition:leave="fade" ></span>
-</div>
-<!-- End Alpine.js -->
+
 </body>
 </html>

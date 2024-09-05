@@ -3,38 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>\\Portfolio\Angel</title>
+  <link href='/src/css/style.css' rel='stylesheet'>
   <script type="module" defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+  
 </head>
 <body>
-  <h1 >Hello, world!</h1>
+  <h1 >Angel Colberg</h1>
   <nav>
-    <a href="#page1">Page 1</a>
-    <a href="#page2">Page 2</a>
+    <a href="#page1">About</a>
+    <a href="#page2">Projects</a>
+    <a href="#page3">Thoughts</a>
   </nav>
   <main>
+
     <slot ></slot>
   
   <div id="page1" class="page active" >
-    <h2>Page 1 Content</h2>
-    <p>This is the content of page 1.</p>
+    <h2>About</h2>
+    <p>
+I am a multi-disciplinary designer, developer and leader with 30 years creating consumer and enterprise experiences across most platforms and devices.
+From design agencies like Fantasy Interactive and Level Studios to start ups like CloudOn, Vevo and Unity as well as large enterprises like Microsoft and Oracle - I have been able to implement and nurture design as both process and culture successfully through a holistic design approach. One that allows for casual cross team facilitation and incorporates engineering early in the design process for rapid prototyping, testing and refactoring iterations throughout the exploratory, generative and evaluative sprints. 
+I specialize across the following product design sub disciplines - User Research, Information Architecture, Interaction Design, Visual/UI Design and Front End Development and have a background in Psychology and Anthropology. 
+
+    </p>
   </div>
   <div id="page2" class="page">
-    <h2>Page 2 Content</h2>
+    <h2>Projects</h2>
     <p>This is the content of page 2.</p>
   </div>
-  <page-transition>
+  <div id="page3" class="page">
+    <h2>Thoughts</h2>
+    <p>This is the content of page 3.</p>
+  </div>
+  <!--page-transition>
     <div class="loader" ></div> 
-  </page-transition>
+  </page-transition-->
 </main>
-<!-- Alpine.js -->
-<div x-data="{ count: 0 }" >
-  <button x-on:click="count++">Press me</button>
-  <span x-show="count" x-text="count" x-transition:enter="fade" x-transition:leave="fade" ></span>
-</div>
-<!-- End Alpine.js -->
-  <script type="module" defer type="text/javascript" src="/main.js"></script>
-  <script type="module" defer type="text/javascript" src="/page-transition.js"></script>
+
+  <script type="module" type="text/javascript" src="/src/js/main.js"></script>
+  <!--script type="module" type="text/javascript" src="/src/js/page-transition.js"></script-->
 </body>
 </html>
