@@ -4,17 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>\\Portfolio\Angel</title>
+  <title>\\Portfolio\Angel Colberg</title>
   <script type="module" defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Play:wght@400;700&family=Playwrite+CU:wght@100..400&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">  
   <script type="module" crossorigin src="./js/main.js"></script>
   <link rel="stylesheet" crossorigin href="./css/main.css">
 </head>
 <body>
-  <h1 >Angel Colberg</h1>
+  <h1 class="glitch">
+    Designer
+    <div class="stack" style="--stacks: 3;">
+      <span style="--index: 0;">Angel Colberg</span>
+      <span style="--index: 1;">Angel Colberg</span>
+      <span style="--index: 2;">Angel Colberg</span>
+    </div>
+    <!--span class="right">Designer</span-->
+  </h1>
   <nav>
     <a href="#page1">About</a>
     <a href="#page2">Projects</a>
@@ -27,15 +34,180 @@
   <div id="page1" class="page active" >
     <h2>About</h2>
     <p>
-I am a multi-disciplinary designer, developer and leader with 30 years creating consumer and enterprise experiences across most platforms and devices.
-From design agencies like Fantasy Interactive and Level Studios to start ups like CloudOn, Vevo and Unity as well as large enterprises like Microsoft and Oracle - I have been able to implement and nurture design as both process and culture successfully through a holistic design approach. One that allows for casual cross team facilitation and incorporates engineering early in the design process for rapid prototyping, testing and refactoring iterations throughout the exploratory, generative and evaluative sprints. 
-I specialize across the following product design sub disciplines - User Research, Information Architecture, Interaction Design, Visual/UI Design and Front End Development and have a background in Psychology and Anthropology. 
+        I am a multi-disciplinary designer, developer and leader with 30 years creating consumer and enterprise experiences across most platforms and devices.
+        From design agencies like Fantasy Interactive and Level Studios to start ups like CloudOn, Vevo and Unity as well as large enterprises like Microsoft and Oracle - I have been able to implement and nurture design as both process and culture successfully through a holistic design approach. One that allows for casual cross team facilitation and incorporates engineering early in the design process for rapid prototyping, testing and refactoring iterations throughout the exploratory, generative and evaluative sprints. 
+        I specialize across the following product design sub disciplines - User Research, Information Architecture, Interaction Design, Visual/UI Design and Front End Development and have a background in Psychology and Anthropology. 
 
     </p>
   </div>
   <div id="page2" class="page">
     <h2>Projects</h2>
-    <p >This is the content of page 2.</p>
+    
+      <div id="cards">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image servicenow">
+              <i class="fa-duotone fa-apartment"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-apartment"></i>
+                <div class="card-info-title">
+                  <h3>ServiceNow</h3>  
+                  <h4>AI design for ServiceNow.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image splunk">
+              <i class="fa-duotone fa-unicorn"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-unicorn"></i>
+                <div class="card-info-title">
+                  <h3>Splunk</h3>  
+                  <h4>Observability for Splunk.</h4>
+                </div>    
+              </div>  
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image gigamon">
+              <i class="fa-duotone fa-blender-phone"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-blender-phone"></i>
+                <div class="card-info-title">
+                  <h3>Gigamon</h3>  
+                  <h4>Security Ops for Gigamon.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card ">
+          <div class="card-content">
+            <div class="card-image unity">
+              <i class="fa-duotone fa-person-to-portal"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-person-to-portal"></i>
+                <div class="card-info-title">
+                  <h3>Unity</h3>  
+                  <h4>Ads and Analytics for Unity.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card ">
+          <div class="card-content">
+            <div class="card-image mozilla">
+              <i class="fa-duotone fa-person-from-portal"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-person-from-portal"></i>
+                <div class="card-info-title">
+                  <h3>Mozilla</h3>  
+                  <h4>Analytics and news design for Mozilla, NYT and Washington Post.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image vevo">
+              <i class="fa-duotone fa-otter"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-otter"></i>
+                <div class="card-info-title">
+                  <h3>Vevo</h3>  
+                  <h4>Web and Mobile video experiences for Vevo.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image">
+              <i class="fa-duotone fa-person-from-portal"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-person-from-portal"></i>
+                <div class="card-info-title">
+                  <h3>Fantasy Interactive</h3>  
+                  <h4>Material design for Google O/14.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image">
+              <i class="fa-duotone fa-person-from-portal"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-person-from-portal"></i>
+                <div class="card-info-title">
+                  <h3>CloudOn</h3>  
+                  <h4>Mobile office productivity app.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image">
+              <i class="fa-duotone fa-person-from-portal"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-person-from-portal"></i>
+                <div class="card-info-title">
+                  <h3>Microsoft</h3>  
+                  <h4>SharePoint experiences for Microsoft.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-image">
+              <i class="fa-duotone fa-person-from-portal"></i>
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <i class="fa-duotone fa-person-from-portal"></i>
+                <div class="card-info-title">
+                  <h3>Freelance design 1994-2006</h3>  
+                  <h4>Cross disciplinary design and development.</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    
   </div>
   <div id="page3" class="page">
     <h2>Thoughts</h2>

@@ -82,6 +82,17 @@ h2 {
   font-size: 1rem;
   
 }
+
+h1, h2, h3, h4, span {
+  color: rgb(240, 240, 240);
+  font-family: var(--font-family-display), sans-serif;
+  font-weight: 400;
+  margin: 0px;
+}
+
+i {  
+  color: rgb(240, 240, 240);
+}
 /* nav */
 nav {
     padding: 0;
@@ -102,7 +113,6 @@ nav {
   nav a:hover {
     border: 1px solid transparent;
     color: var(--contrast-color);
-    animation: bgColor 10s ease infinite;
   }
 
   /* pages */
@@ -145,14 +155,14 @@ main {
 }
 
 /* backlight */
-.backlight, nav a {
+.backlight {
   position: relative;
   color: #252B37;
-  background-color: #151823;
+  background-color: var(--accent-color-1);
   border: 1px solid transparent;
   animation: textColor 10s ease infinite;
 }
-.backlight:after, nav a:after {
+.backlight:after {
   position: absolute;
   content: "";
   top: 0;
@@ -245,7 +255,7 @@ main {
     opacity: 0;
     transform: translateX(-50%);
     text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-  };
+  }
   60% {
     opacity: 0.5;
     transform: translateX(50%);
@@ -346,19 +356,6 @@ main {
   z-index: 2;
 }
 
-/* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
-
-h1, h2, h3, h4, span {
-  color: rgb(240, 240, 240);
-  font-family: var(--font-family-display), sans-serif;
-  font-weight: 400;
-  margin: 0px;
-}
-
-i {  
-  color: rgb(240, 240, 240);
-}
-
 .card-image {
   align-items: center;
   display: flex;
@@ -366,6 +363,37 @@ i {
   justify-content: center;
   overflow: hidden;
 }
+.servicenow {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/servicenow/servicenow-hero-2.png");
+}
+.splunk {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/splunk/splunk-hero.png");
+}
+.gigamon {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/gigamon/giga-hero.png");
+}
+.unity {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/unity/unity-full.png");
+}
+.mozilla {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/mozilla/mozilla-half.png");
+}
+.vevo {
+  background: 50% 50% / cover no-repeat url("../../public/img/projects/vevo/vevo-full-2.png");
+}
+.fantasy {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/fi/fi-full.png");
+}
+.cloudon {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/cloudon/cloudon-full.png");
+}
+.microsoft {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/msw/msw-full-2.png");
+}
+.angel {
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/onems/onems-full.jpg;");
+}
+  
 
 .card-image > i {
   font-size: 6em;
