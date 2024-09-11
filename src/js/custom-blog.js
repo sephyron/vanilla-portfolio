@@ -1,4 +1,6 @@
+
 class CustomBlog extends HTMLElement {
+    
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -25,12 +27,21 @@ class CustomBlog extends HTMLElement {
                     margin-bottom: 1rem;
                 }
                 .post h2 {
-                    font-family: var(--font-family-display);
+                    font-size: 2rem;
+                    character-spacing: 0.1em;
+                    
                 }
-               h1, h3, h4, span {
+                .post p {
+                    padding: 0 1rem;
+                }
+                .post-content img {
+                    width: 100%;
+                    max-width: 600px;
+                }
+               h1, h2, h3, h4, span {
                     
                     font-family: var(--font-family-display), sans-serif;
-                    font-weight: 400;
+                    font-weight: 100;
                     margin: 0px;
                   }
                 .post-meta {
@@ -38,8 +49,12 @@ class CustomBlog extends HTMLElement {
                     font-size: 0.9em;
                     margin-bottom: 10px;
                 }
+                .post-content {
+                    font-size: 1.1rem;
+                    padding: 1rem;
+                }
                 a {
-                    color: var(--accent-color-1);
+                    color: var(--contrast-color);
                     text-decoration: none;
                     display: inline-block;
                     font-family: var(--font-family-display);
@@ -48,6 +63,7 @@ class CustomBlog extends HTMLElement {
                 a:hover {
                     background-color: #26253c;
                     color: #fff;
+                    
                 }
             </style>
             
@@ -79,7 +95,7 @@ class CustomBlog extends HTMLElement {
             if (post) {
                 this.displaySinglePost(contentContainer, post);
             } else {
-                contentContainer.innerHTML = '<h2>404 - Post not found</h2>';
+                contentContainer.innerHTML = '<h1>404 - Post not found</h1>';
             }
         }
     }
@@ -103,9 +119,13 @@ class CustomBlog extends HTMLElement {
         try {
             const response = await fetch(`public/posts/${post.slug}.md`);
             const markdown = await response.text();
-            const content = marked.parse(markdown);
+            const content = marked.parse(markdown, { renderer: new marked.Renderer() });
+
+
+
 
             container.innerHTML = `
+                <p><a href="/" data-navigo>Back to all posts</a></p>    
                 <h1>${post.title}</h1>
                 <div class="post-meta">Published on ${post.date}</div>
                 <div class="post-content">${content}</div>

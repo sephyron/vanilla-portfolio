@@ -11,5 +11,8 @@
   "devDependencies": {
     "vite": "^5.4.3",
     "vite-plugin-inspect": "^0.8.7"
+  },
+  "dependencies": {
+    "marked": "^14.1.2"
   }
 }
