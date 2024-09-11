@@ -18,11 +18,14 @@ export default defineConfig({
             extType = 'fonts';
           } else if (/css/i.test(extType)) {
             extType = 'css';
-          }
+          }  else if (/posts/i.test(extType)) {
+            extType = 'md';
+          } 
           return `${extType}/[name][extname]`;
         },
-        entryFileNames: 'js/[name].js',
+        entryFileNames: 'js/[name].js', 
         chunkFileNames: 'js/[name].js',
+        
       },
     },
     outDir: 'dist',
@@ -30,6 +33,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
+      '@posts': resolve(__dirname, 'public/posts'),
     },
   },
   server: {

@@ -13,7 +13,7 @@
 </head>
 <body>
   <h1 class="glitch">
-    Designer
+    <typewriter-component ispeed="300">Designer</typewriter-component>
     <div class="stack" style="--stacks: 3;">
       <span style="--index: 0;">Angel Colberg</span>
       <span style="--index: 1;">Angel Colberg</span>
@@ -21,24 +21,39 @@
     </div>
     <!--span class="right">Designer</span-->
   </h1>
-  <nav>
-    <a href="#page1">About</a>
+  <nav >
+    <a href="#page1" class="active">About</a>
     <a href="#page2">Projects</a>
     <a href="#page3">Thoughts</a>
   </nav>
   <main>
-
+<div class="lines">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
   <slot ></slot>
   
   <div id="page1" class="page active" >
     <h2>About</h2>
-    <p>
-        I am a multi-disciplinary designer, developer and leader with 30 years creating consumer and enterprise experiences across most platforms and devices.
-        From design agencies like Fantasy Interactive and Level Studios to start ups like CloudOn, Vevo and Unity as well as large enterprises like Microsoft and Oracle - I have been able to implement and nurture design as both process and culture successfully through a holistic design approach. One that allows for casual cross team facilitation and incorporates engineering early in the design process for rapid prototyping, testing and refactoring iterations throughout the exploratory, generative and evaluative sprints. 
-        I specialize across the following product design sub disciplines - User Research, Information Architecture, Interaction Design, Visual/UI Design and Front End Development and have a background in Psychology and Anthropology. 
-
-    </p>
+    <div class="two-column">
+      <div class="column-left"></div>
+      <div class="column-right">
+        <p>
+          <typewriter-component>
+            Role: Designer / Developer
+            Experience: Design Leadership, User Research, Information Architecture, Product Design, Motion Design and Front End Development
+            YOE: 30
+            Education: Anthropology, BBA
+            Startups: CloudOn, Vevo, Unity and others
+            Studios: Fantasy, Level and others
+            Enterprise: Microsoft, Mozilla, Gigamon, ServiceNow, Splunk and others
+          </typewriter-component>
+        </p>
+      </div>
+    </div>
   </div>
+  
   <div id="page2" class="page">
     <h2>Projects</h2>
     
@@ -196,28 +211,29 @@
               <div class="card-info">
                 <i class="fa-duotone fa-person-from-portal"></i>
                 <div class="card-info-title">
-                  <h3>Freelance design 1994-2006</h3>  
-                  <h4>Cross disciplinary design and development.</h4>
+                  <h3>Freelance 1994-2006</h3>  
+                  <h4>Cross disciplinary design and development 1994-2006.</h4>
                 </div>    
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-
+      </div>
+      <div id="page3" class="page">
+        <h2>Thoughts</h2>
+        <custom-blog></custom-blog>
+      </div>
     
   </div>
-  <div id="page3" class="page">
-    <h2>Thoughts</h2>
-    <p>This is the content of page 3.</p>
-  </div>
+ 
   <!--page-transition>
     <div class="loader" ></div> 
   </page-transition-->
 </main>
-
+  <script type="module" src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script type="module" type="text/javascript" src="src/js/main.js"></script>
-  <!--script type="module" type="text/javascript" src="src/js/page-transition.js"></script-->
+  <script type="module" type="text/javascript" src="src/js/typewriter.js"></script>
+  <script type="module" type="text/javascript" src="src/js/custom-blog.js"></script>
 </body>
 </html>
