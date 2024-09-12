@@ -10,17 +10,17 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
       },
       output: {
-        assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').at(-1);
+        assetFileNames: ({ name, source, extType }) => {
+          if (/public\/posts/i.test(source)) {
+            return `posts/${name}[extname]`; // Use name instead of newName
+          }
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = 'img';
           } else if (/otf|woff|woff2/i.test(extType)) {
             extType = 'fonts';
           } else if (/css/i.test(extType)) {
             extType = 'css';
-          }  else if (/posts/i.test(extType)) {
-            extType = 'md';
-          } 
+          }
           return `${extType}/[name][extname]`;
         },
         entryFileNames: 'js/[name].js', 
@@ -32,8 +32,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
-      '@posts': resolve(__dirname, 'public/posts'),
+      '@': resolve(__dirname, 'src')
     },
   },
   server: {
