@@ -28,21 +28,15 @@
 * {
   box-sizing: border-box;
 }
-html {
-    
+html { 
     font-size: var(--font-size);
     margin: 0;
-    padding: 0;
-    
+    padding: 1rem 2rem;   
 }
 body {
     background: 100% no-repeat var(--primary-gradient);
     font-family: "Departure Mono Regular", sans-serif;
     color: var(--contrast-color);
-    margin: 0;
-    padding: 2em;
-    
-
 }
 input {
     border-radius: var(--border-radius);
@@ -83,11 +77,12 @@ h1 {
   font-weight:lighter;
   font-size: 1.1rem;
   color: var(--contrast-color);
+  margin-bottom: 2rem;
 }
 h2 {
   font-family:  var(--font-family-display);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 3rem;
   
 }
 
@@ -108,7 +103,7 @@ nav {
     justify-content:space-evenly;
     align-items: center;
     font-size: 1.1rem;
-    margin: 1rem;
+    margin: 0;
     width: fit-content;
   }
   nav a {
@@ -166,18 +161,20 @@ nav {
       transparent 20px
     );
   }
-.page h2 span {
+  .page h2 span {
   background: repeating-linear-gradient(
     45deg,
     var(--secondary-color),
     var(--secondary-color) 90%,
     transparent 90%,
     transparent 100%
+   
   );
+  animation: 600ms ease-in-out slideIn;
   display: inline-block;
   padding: 1rem;
-  width: 75%;
-}
+ width: 75%;
+  }
   .page p { 
     display: inline-block;
     padding: 2rem;
@@ -200,7 +197,7 @@ nav {
     width: 100%;
 
   }
-.column-left {
+  .column-left {
   width: 200px;
   background: rgba(27, 26, 35, 0.5) url("/public/img/fixed-ai-pfp-solo.png") ;
   background-blend-mode:color-dodge;
@@ -209,11 +206,19 @@ nav {
   background-repeat: no-repeat;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   
-}
+  }
   
 
   .loader {
     transition: all linear 1300ms;
+  }
+  @keyframes slideIn {
+    0% {
+      width: 25%;
+    }
+    100% {
+      width: 75%;
+    }
   }
   @keyframes appear {
     0% {
@@ -244,7 +249,7 @@ nav {
   }
   /* structure */
 main {
-    padding: 1rem;
+    padding: 0;
     margin: 0 auto;
     height: 100vh;
     
@@ -403,10 +408,12 @@ main {
   position: relative;
   min-width: 100px;
   flex-grow: 1;
-  max-width: 270px;
+  max-width: 100%;
   transition: all 0.2s ease-in-out;
 }
-
+.card:last-child {
+  max-width: -webkit-fill-available;
+}
 .card:hover::before {
   opacity: 1;
 }
@@ -489,7 +496,7 @@ main {
   background: 50% 50% / cover no-repeat  url("../../public/img/projects/msw/msw-full-2.png");
 }
 .angel {
-  background: 50% 50% / cover no-repeat  url("../../public/img/projects/em/em-logo-hero.png");
+  background: #656d71 50% 50% / contain no-repeat  url("../../public/img/projects/em/em-new.png");
 }
   
 
@@ -678,5 +685,97 @@ main {
   }
   100% {
     top: 110%;
+  }
+}
+
+/* H-line */
+.h-line {
+  position: absolute;
+  width: 100%;
+  height: 1px; 
+  top: 50%; 
+  left: 0; 
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.single {
+  position: relative;
+}
+.h-line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 15vw; 
+  top: 0; 
+  left: -50%; 
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    -webkit-animation: drop 7s 0s infinite;
+          animation: drop 7s 0s infinite;
+    -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+          animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.h-line:nth-child(1) {
+  margin-top: -25%; 
+}
+
+.h-line:nth-child(1)::after {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.h-line:nth-child(3) {
+  margin-top: 25%; 
+}
+.h-line.single:nth-child(3) {
+  margin-top: 0%; 
+}
+.h-line:nth-child(3)::after {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    left: -50%; 
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+  }
+  50% {
+    left: 110%; 
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+
+  } 
+  51% {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+
+  } 
+  100% {
+    left: -50%; 
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+
+  }
+}
+
+@keyframes drop {
+  0% {
+    left: -50%; 
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+  }
+  50% {
+    left: 110%; 
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+
+  } 
+  51% {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+
+  } 
+  100% {
+    left: -50%; 
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+
   }
 }
