@@ -15,9 +15,9 @@
   <h1 class="glitch">
     <typewriter-component ispeed="300">Designer</typewriter-component>
     <div class="stack" style="--stacks: 3;">
-      <span style="--index: 0;">Angel Colberg</span>
-      <span style="--index: 1;">Angel Colberg</span>
-      <span style="--index: 2;">Angel Colberg</span>
+      <span style="--index: 0;" data-navigo>Angel Colberg</span>
+      <span style="--index: 1;" data-navigo>Angel Colberg</span>
+      <span style="--index: 2;" data-navigo>Angel Colberg</span>
     </div>
     <!--span class="right">Designer</span-->
   </h1>
@@ -35,7 +35,7 @@
   <slot ></slot>
   
   <div id="page1" class="page active" >
-    <h2>About</h2>
+    <h2><span>私について</span></h2>
     <div class="two-column">
       <div class="column-left"></div>
       <div class="column-right">
@@ -55,7 +55,7 @@
   </div>
   
   <div id="page2" class="page">
-    <h2>Projects</h2>
+    <h2><span>プロジェクト</span></h2>
     
       <div id="cards">
         <div class="card">
@@ -221,7 +221,7 @@
       </div>
       </div>
       <div id="page3" class="page">
-        <h2>Thoughts</h2>
+        <h2><span>考え</span></h2>
         <custom-blog></custom-blog>
       </div>
     

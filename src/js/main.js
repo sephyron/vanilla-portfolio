@@ -12,7 +12,9 @@ navLinks.forEach(link => {
     const targetId = link.getAttribute('href'); 
     const targetPage = document.querySelector(targetId);
 
-
+ 
+  
+  
 
 
     // Hide all pages
@@ -47,3 +49,4 @@ document.getElementById("cards").onmousemove = e => {
     card.style.setProperty("--mouse-y", `${y}px`);
   };
 }
+

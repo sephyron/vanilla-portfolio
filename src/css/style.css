@@ -158,8 +158,19 @@ nav {
     padding: 0;
     font-weight: 300;
     font-size: 1.5em;
+    background: repeating-linear-gradient(
+  45deg,
+  var(--secondary-color),
+  var(--secondary-color) 10px,
+  transparent 10px,
+  transparent 20px
+);
   }
-
+.page h2 span {
+  background-color: var(--secondary-color);
+  display: inline-block;
+  padding: 1rem;
+}
   .page p { 
     display: inline-block;
     padding: 2rem;
@@ -384,7 +395,8 @@ main {
   flex-direction: column;
   position: relative;
   min-width: 100px;
-  max-width: 300px;
+  flex-grow: 1;
+  max-width: 270px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -443,10 +455,10 @@ main {
   overflow: hidden;
 }
 .servicenow {
-  background: 50% 50% / cover no-repeat  url("../../public/img/projects/servicenow/servicenow-hero.png");
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/servicenow/servicenow-full-2.png");
 }
 .splunk {
-  background: 50% 50% / cover no-repeat  url("../../public/img/projects/splunk/splunk-hero-2.png");
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/splunk/splunk-full-2.png");
 }
 .gigamon {
   background: 50% 50% / cover no-repeat  url("../../public/img/projects/gigamon/giga-hero.png");
@@ -455,7 +467,7 @@ main {
   background: 50% 50% / cover no-repeat  url("../../public/img/projects/unity/unity-full.png");
 }
 .mozilla {
-  background: 50% 50% / cover no-repeat  url("../../public/img/projects/mozilla/mozilla-half.png");
+  background: 50% 50% / cover no-repeat  url("../../public/img/projects/mozilla/coral-full.png");
 }
 .vevo {
   background: 50% 50% / cover no-repeat url("../../public/img/projects/vevo/vevo-full-2.png");

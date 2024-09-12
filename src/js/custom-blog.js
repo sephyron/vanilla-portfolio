@@ -38,7 +38,7 @@ class CustomBlog extends HTMLElement {
                     width: 100%;
                     max-width: 600px;
                 }
-               h1, h2, h3, h4, span {
+                h1, h2, h3, h4, span {
                     
                     font-family: var(--font-family-display), sans-serif;
                     font-weight: 100;

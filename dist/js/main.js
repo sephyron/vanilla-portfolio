@@ -41,9 +41,9 @@
                 .post p {
                     padding: 0 1rem;
                 }
-                .post img {
+                .post-content img {
                     width: 100%;
-                    max-width: 600px
+                    max-width: 600px;
                 }
                h1, h2, h3, h4, span {
                     
