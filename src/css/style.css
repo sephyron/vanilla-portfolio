@@ -159,17 +159,24 @@ nav {
     font-weight: 300;
     font-size: 1.5em;
     background: repeating-linear-gradient(
-  45deg,
-  var(--secondary-color),
-  var(--secondary-color) 10px,
-  transparent 10px,
-  transparent 20px
-);
+      45deg,
+      var(--secondary-color),
+      var(--secondary-color) 10px,
+      transparent 10px,
+      transparent 20px
+    );
   }
 .page h2 span {
-  background-color: var(--secondary-color);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--secondary-color) 90%,
+    transparent 90%,
+    transparent 100%
+  );
   display: inline-block;
   padding: 1rem;
+  width: 75%;
 }
   .page p { 
     display: inline-block;
