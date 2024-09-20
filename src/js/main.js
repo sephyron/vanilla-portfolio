@@ -46,16 +46,56 @@ clientX - rect.left,
 };
 // Select all cards
 const cards = document.querySelectorAll('.card');
+const cardData = [
+  { 
+    title: "Card 1 Title", 
+    content: "This is the content for card 1." 
+  },
+  { 
+    title: "Card 2 Title", 
+    content: "This is the content for card 2." 
+  },
+  { 
+    title: "Card 3 Title", 
+    content: "This is the content for card 2." 
+  },
+  { 
+    title: "Card 4 Title", 
+    content: "This is the content for card 2." 
+  },
+  { 
+    title: "Card 5 Title", 
+    content: "This is the content for card 2." 
+  },
+  { 
+    title: "Card 6 Title", 
+    content: "This is the content for card 2." 
+  },
+  { 
+    title: "Card 7 Title", 
+    content: "This is the content for card 2." 
+  },
+  { 
+    title: "Card 8 Title", 
+    content: "This is the content for card 2." 
+  },
+  { 
+    title: "Card 9 Title", 
+    content: "This is the content for card 2." 
+  }
+];
 // Add event listener to each card
 cards.forEach(card => {
   card.addEventListener('click', (event) => {
     // Prevent the click event from propagating to the parent container
     event.stopPropagation();
+    const index = card.dataset.cardIndex;
+    const cardInfo = cardData[index]; // Or access by ID if using that method
     const modal = document.createElement('my-modal');
     modal.innerHTML = `
       <span slot="content">
-        <h2>Card Content</h2>
-        <p>This is the content of the modal that pops up when you click the card.</p>
+        <h2>${cardInfo.title}</h2>
+        <p>${cardInfo.content}</p>
       </span>
     `;
     document.body.appendChild(modal);
