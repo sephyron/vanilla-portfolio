@@ -12,11 +12,6 @@ navLinks.forEach(link => {
     const targetId = link.getAttribute('href'); 
     const targetPage = document.querySelector(targetId);
 
- 
-  
-  
-
-
     // Hide all pages
     pages.forEach(page => page.classList.remove('active'));
     //this.classList.add('active');
@@ -40,13 +35,30 @@ navLinks.forEach(link => {
 
 // Mouse movement
 document.getElementById("cards").onmousemove = e => {
-  for(const card of document.getElementsByClassName("card")) {
+  for (const card of document.getElementsByClassName("card")) {
     const rect = card.getBoundingClientRect(),
-          x = e.clientX - rect.left,
-          y = e.clientY - rect.top;
-
+      x = e.
+clientX - rect.left,
+      y = e.clientY - rect.top;
     card.style.setProperty("--mouse-x", `${x}px`);
     card.style.setProperty("--mouse-y", `${y}px`);
-  };
-}
-
+  }
+};
+// Select all cards
+const cards = document.querySelectorAll('.card');
+// Add event listener to each card
+cards.forEach(card => {
+  card.addEventListener('click', (event) => {
+    // Prevent the click event from propagating to the parent container
+    event.stopPropagation();
+    const modal = document.createElement('my-modal');
+    modal.innerHTML = `
+      <span slot="content">
+        <h2>Card Content</h2>
+        <p>This is the content of the modal that pops up when you click the card.</p>
+      </span>
+    `;
+    document.body.appendChild(modal);
+    modal.open();
+  });
+});

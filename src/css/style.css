@@ -160,6 +160,7 @@ nav {
       transparent 10px,
       transparent 20px
     );
+    /*animation: 600ms ease expandBG;*/
   }
   .page h2 span {
   background: repeating-linear-gradient(
@@ -170,10 +171,10 @@ nav {
     transparent 100%
    
   );
-  animation: 600ms ease-in-out slideIn;
+  /*animation: 900ms ease-in expandBG;*/
   display: inline-block;
   padding: 1rem;
- width: 75%;
+ width: 95%;
   }
   .page p { 
     display: inline-block;
@@ -208,11 +209,34 @@ nav {
   
   }
   
-
   .loader {
     transition: all linear 1300ms;
   }
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .slide-in {
+    animation: slideIn 0.5s ease-in-out;
+  }
   @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes expandBG {
     0% {
       width: 25%;
     }
@@ -248,12 +272,11 @@ nav {
     display: none;
   }
   /* structure */
-main {
+  main {
     padding: 0;
     margin: 0 auto;
-    height: 100vh;
-    
-}
+    height: 100vh; 
+  }
 
 /* backlight */
 .backlight {
