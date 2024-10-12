@@ -2,8 +2,10 @@
 /* src/css/modal.css */
 .modal {
     opacity: 0;
-       
-    position: absolute;
+     display: none;
+      visibility: hidden;
+    
+    position: fixed;
     z-index: 9999;
     left: 0;
     top: 0;

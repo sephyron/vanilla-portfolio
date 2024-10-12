@@ -5,7 +5,7 @@ class TypewriterComponent extends HTMLElement {
       this.shadowRoot.innerHTML = `
         <style>
           :host {
-            display: block;
+            display: flex;
           }
           span.cursor {
             animation: blinker 1s ease-in-out infinite;

@@ -19,7 +19,6 @@
     --font-family-display-6: "Playwrite CU";
     --font-family-display-7: "Play";
     --font-family-display-8: "Chakra Petch";
-  
     --bg-color: var(--primary-gradient);
     --card-color: var(--secondary-color);
   
@@ -81,22 +80,17 @@
     font-family: var(--font-family-display-8), sans-serif;
   }
   h1 {
-    
     font-weight: 700;
     font-size: 1.1rem;
     color: var(--contrast-color);
     margin-bottom: 2rem;
   }
   h2 {
-    
     font-weight: 500;
     font-size: 3rem;
-    
   }
   
-  h3, h4, span{
-    
-    
+  h3, h4, span{  
     font-weight: 300;
     margin: 0px;
   }
@@ -123,22 +117,16 @@
       transition: all 0.3s ease-in-out;
       color: var(--muted-color);
       padding: 0.6rem 0.8rem;
-      border-radius: 5px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 6px 6px 1rem rgba(0, 0, 0, 0.05),
-      -6px -6px 1rem rgba(91, 90, 90, 0.03);  
       transition: all 0.3s ease-in-out; 
     }
     nav a:hover {
-      border: 1px solid transparent;
-      color: var(--accent-color-2);
       cursor: pointer;
       transition: all 0.3s ease-in-out;
     }
     nav a.active {
         box-shadow: inset 0px 0px 1rem rgba(0, 0, 0, 0.2),
         inset -0px -0px 1rem rgba(255, 255, 255, 0.2);
-      color: var(--contrast-color);
+      color: var(--accent-color-2);
       transition: all 0.3s ease-in-out; 
     }
   

@@ -1,20 +1,20 @@
 
 :root {
-  --primary-color: #1b1a23;
-  --secondary-color: #26253c;
-  --accent-color-1: #373458;
+  --primary-color: #11181C;
+  --secondary-color: #212121;
+  --accent-color-1: #222428;
   --accent-color-2: #f80759;
   --contrast-color: #fff;
   --muted-color: #999;
   --font-size: 11px;
-  --primary-gradient: #1b1a23 linear-gradient(to bottom, #1b1a23, #24233b);
+  --primary-gradient: #11181C linear-gradient(to bottom, #11181C, #222428);
   --secondary-gradient: linear-gradient(to right, #f80759, #bc4e9c);
   --border-radius: 3px;
   --font-family-pixel: "Departure Mono Regular";
   --font-family-display: "Chakra Petch";
   --font-family-slab-regular: "Zilla Slab Highlight";
   --bg-color: var(--primary-gradient);
-  --card-color: #26253c;
+  --card-color: #222428;
 }
 
 @font-face {
@@ -31,12 +31,18 @@
 html { 
     font-size: var(--font-size);
     margin: 0;
-    padding: 1rem 2rem;   
+    padding: 1rem 2rem; 
+
 }
 body {
     background: 100% no-repeat var(--primary-gradient);
     font-family: "Departure Mono Regular", sans-serif;
     color: var(--contrast-color);
+    
+}
+canvas {
+  position: fixed; top: 0; right: 0; left: 0; 
+  z-index: -2;
 }
 input {
     border-radius: var(--border-radius);
@@ -407,16 +413,17 @@ nav {
 
 /* Cards */
 
-#cards {
+#cards, .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;  
   max-width:100%;
   width: 100%;
   margin-top: 1rem;
+  
 }
 
-#cards:hover > .card::after {
+#cards:hover > .card::after, .cards:hover > .card::after  {
   opacity: 1;
 }
 

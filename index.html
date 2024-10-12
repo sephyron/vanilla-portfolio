@@ -5,20 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>\\Portfolio\Angel Colberg</title>
-  <link href='src/css/style-neu.css' rel='stylesheet'>
+  <link href='src/css/style.css' rel='stylesheet'>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!--link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Play:wght@400;700&family=Playwrite+CU:wght@100..400&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet"-->  
   <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=SUSE:wght@100..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+
   <h1 class="glitch">
-    <typewriter-component class="subtitle" ispeed="300">Designer</typewriter-component>
+    
+    <typewriter-component class="subtitle" ispeed="300">sephyron</typewriter-component>
     <div class="stack" style="--stacks: 3;">
-      <span style="--index: 0;" data-navigo>Angel Colberg</span>
-      <span style="--index: 1;" data-navigo>Angel Colberg</span>
-      <span style="--index: 2;" data-navigo>Angel Colberg</span>
+      <span style="--index: 0;" data-navigo>天使</span>
+      <span style="--index: 1;" data-navigo>天使</span>
+      <span style="--index: 2;" data-navigo>天使</span>
     </div>
+    
     <!--span class="right">Designer</span-->
   </h1>
   <nav >
@@ -27,38 +31,38 @@
     <a href="#page3" data-navigo>Theory</a>
   </nav>
   <main>
-<!--div class="lines">
-  <div class="h-line"></div>
-  <div class="h-line"></div>
-  <div class="h-line"></div>
-</div-->
-  <slot ></slot>
-  
+
+
+ 
   <div id="page1" class="page active" >
-    <h2><span>私について</span></h2>
-    <div class="two-column">
-      <div class="column-left"></div>
-      <div class="column-right">
-        <p>
-          <typewriter-component>
-            Role: Designer / Developer
-            Experience: Design Leadership, User Research, Information Architecture, Product Design, Motion Design and Front End Development
-            YOE: 30
-            Education: Anthropology, BBA
-            Startups: CloudOn, Vevo, Unity and others
-            Studios: Fantasy, Level and others
-            Enterprise: Microsoft, Mozilla, Gigamon, ServiceNow, Splunk and others
-          </typewriter-component>
-        </p>
+    <h2><span>BIO [身元]</span></h2>
+    <div class="cards">
+        <div class="two-column card">
+          <div class="column-left"></div>
+          <div class="column-right">
+            <p class="card-info-wrapper">
+              <typewriter-component>
+                Role: Designer / Developer
+                Experience: Design Leadership, User Research, Information Architecture, Product Design, Motion Design and Front End Development
+                YOE: 30
+                Education: Anthropology, BBA
+                Startups: CloudOn, Vevo, Unity and others
+                Studios: Fantasy, Level and others
+                Enterprise: Microsoft, Mozilla, Gigamon, ServiceNow, Splunk and others
+              </typewriter-component>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+
+
   </div>
   
   <div id="page2" class="page">
-    <h2><span>プロジェクト</span></h2>
+    <h2><span>CRAFT [クラフト]</span></h2>
     
       <div id="cards">
-        <div class="card">
+        <div class="card" data-card-index="0">
           <div class="card-content">
             <div class="card-image servicenow">
               <i class="fa-duotone fa-apartment"></i>
@@ -74,7 +78,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-card-index="1">
           <div class="card-content">
             <div class="card-image splunk">
               <i class="fa-duotone fa-unicorn"></i>
@@ -90,7 +94,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-card-index="2">
           <div class="card-content">
             <div class="card-image gigamon">
               <i class="fa-duotone fa-blender-phone"></i>
@@ -106,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="card ">
+        <div class="card " data-card-index="3">
           <div class="card-content">
             <div class="card-image unity">
               <i class="fa-duotone fa-person-to-portal"></i>
@@ -122,7 +126,7 @@
             </div>
           </div>
         </div>
-        <div class="card ">
+        <div class="card " data-card-index="4">
           <div class="card-content">
             <div class="card-image mozilla">
               <i class="fa-duotone fa-person-from-portal"></i>
@@ -138,7 +142,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-card-index="5">
           <div class="card-content">
             <div class="card-image vevo">
               <i class="fa-duotone fa-otter"></i>
@@ -154,7 +158,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-card-index="6">
           <div class="card-content">
             <div class="card-image fantasy">
               <i class="fa-duotone fa-person-from-portal"></i>
@@ -170,12 +174,12 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-card-index="7">
           <div class="card-content">
             <div class="card-image cloudon">
               <i class="fa-duotone fa-person-from-portal"></i>
             </div>
-            <div class="card-info-wrapper">
+            <div class="card-info-wrapper" >
               <div class="card-info">
                 <i class="fa-duotone fa-person-from-portal"></i>
                 <div class="card-info-title">
@@ -186,7 +190,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-card-index="8">
           <div class="card-content">
             <div class="card-image microsoft">
               <i class="fa-duotone fa-person-from-portal"></i>
@@ -202,7 +206,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-card-index="9">
           <div class="card-content">
             <div class="card-image angel">
               <i class="fa-duotone fa-person-from-portal"></i>
@@ -221,22 +225,21 @@
       </div>
       </div>
       <div id="page3" class="page">
-        <h2><span>考え</span></h2>
+        <h2><span>THEORY [理論]</span></h2>
         <custom-blog></custom-blog>
       </div>
     
   </div>
  
-  <!--page-transition>
-    <div class="loader" ></div> 
-  </page-transition-->
+
 </main>
-<div class="h-line single"></div>
+
 
   <script type="module" src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script type="module" type="text/javascript" src="src/js/main.js"></script>
   <script type="module" type="text/javascript" src="src/js/typewriter.js"></script>
   <script type="module" type="text/javascript" src="src/js/custom-blog.js"></script>
   <script type="module" type="text/javascript" src="src/js/modal.js"></script>
+
 </body>
 </html>
