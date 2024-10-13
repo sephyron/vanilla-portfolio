@@ -12,15 +12,22 @@ export default defineConfig({
       output: {
         assetFileNames: ({ name, source, extType }) => {
           if (/public\/posts/i.test(source)) {
-            return `posts/${name}[extname]`; // Use name instead of newName
+            return `posts/${name}[extname]`; 
           }
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(name)) { // Using name instead of extType
             extType = 'img';
-          } else if (/otf|woff|woff2/i.test(extType)) {
+          } else if (/otf|woff|woff2/i.test(name)) { // Using name instead of extType
             extType = 'fonts';
-          } else if (/css/i.test(extType)) {
+          } else if (/\.css$/i.test(name)) { // Using name and ensuring .css extension
             extType = 'css';
+          } else if (/\.js$/i.test(name)) { // Using name and ensuring .js extension
+            extType = 'js';
+          } else {
+            // Handle other file types or throw an error if needed
+            console.warn(`Unhandled asset type for: ${name}`);
+            extType = 'misc'; // Or throw an error: throw new Error(...) 
           }
+          
           return `${extType}/[name][extname]`;
         },
         entryFileNames: 'js/[name].js', 
@@ -38,6 +45,5 @@ export default defineConfig({
   server: {
     open: true,
   },
-  publicDir: 'public',
-  
+  publicDir: 'public',  
 })

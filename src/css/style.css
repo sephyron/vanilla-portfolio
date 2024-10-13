@@ -1,20 +1,20 @@
 
 :root {
-  --primary-color: #11181C;
-  --secondary-color: #212121;
-  --accent-color-1: #222428;
+  --primary-color: #101720;
+  --secondary-color: #0b1114;
+  --accent-color-1: #192028;
   --accent-color-2: #f80759;
   --contrast-color: #fff;
   --muted-color: #999;
   --font-size: 11px;
-  --primary-gradient: #11181C linear-gradient(to bottom, #11181C, #222428);
+  --primary-gradient:  linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
   --secondary-gradient: linear-gradient(to right, #f80759, #bc4e9c);
   --border-radius: 3px;
   --font-family-pixel: "Departure Mono Regular";
   --font-family-display: "Chakra Petch";
   --font-family-slab-regular: "Zilla Slab Highlight";
   --bg-color: var(--primary-gradient);
-  --card-color: #222428;
+  --card-color: rgba(25, 32, 40, 1);
 }
 
 @font-face {
@@ -40,7 +40,7 @@ body {
     color: var(--contrast-color);
     
 }
-canvas {
+particle-canvas {
   position: fixed; top: 0; right: 0; left: 0; 
   z-index: -2;
 }
@@ -123,12 +123,12 @@ nav {
   }
   nav a:hover {
     border: 1px solid transparent;
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color-1);
     color: var(--contrast-color);
     cursor: pointer;
   }
   nav a.active {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color-1);
     color: var(--contrast-color);
   }
 
@@ -161,8 +161,8 @@ nav {
     font-size: 1.5em;
     background: repeating-linear-gradient(
       45deg,
-      var(--secondary-color),
-      var(--secondary-color) 10px,
+      var(--accent-color-1),
+      var(--accent-color-1) 10px,
       transparent 10px,
       transparent 20px
     );
@@ -171,8 +171,8 @@ nav {
   .page h2 span {
   background: repeating-linear-gradient(
     45deg,
-    var(--secondary-color),
-    var(--secondary-color) 90%,
+    var(--accent-color-1),
+    var(--accent-color-1) 90%,
     transparent 90%,
     transparent 100%
    
@@ -193,15 +193,15 @@ nav {
     display: flex;
     flex-direction: row;
     width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 1rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 0.1rem;
+    margin: 0;
+    
+    
+    
     padding: 1rem;
   }
 
   .column-right {
-    width: 100%;
+    width: auto;
 
   }
   .column-left {
@@ -420,7 +420,7 @@ nav {
   max-width:100%;
   width: 100%;
   margin-top: 1rem;
-  
+  z-index: 0;
 }
 
 #cards:hover > .card::after, .cards:hover > .card::after  {
