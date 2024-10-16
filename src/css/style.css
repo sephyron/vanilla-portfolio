@@ -11,8 +11,14 @@
   --secondary-gradient: linear-gradient(to right, #f80759, #bc4e9c);
   --border-radius: 3px;
   --font-family-pixel: "Departure Mono Regular";
-  --font-family-display: "Chakra Petch";
-  --font-family-slab-regular: "Zilla Slab Highlight";
+  --font-family-display: "Gothic A1";
+  --font-family-display-2: "SUSE";
+  --font-family-display-3: "Titillium Web";
+  --font-family-display-4: "Tomorrow";
+  --font-family-display-5: "Zilla Slab Highlight";
+  --font-family-display-6: "Playwrite CU";
+  --font-family-display-7: "Play";
+  --font-family-display-8: "Chakra Petch";
   --bg-color: var(--primary-gradient);
   --card-color: rgba(25, 32, 40, 1);
 }
@@ -36,9 +42,8 @@ html {
 }
 body {
     background: 100% no-repeat var(--primary-gradient);
-    font-family: "Departure Mono Regular", sans-serif;
+    font-family: var(--font-family-display), sans-serif;
     color: var(--contrast-color);
-    
 }
 particle-canvas {
   position: fixed; top: 0; right: 0; left: 0; 
@@ -61,7 +66,7 @@ button {
   padding: 0.5rem 0.8rem;
   border: 0;
   outline: 0;
-  font-family: var(--font-family-pixel);
+  font-family: var(--font-family-display-3);
   font-size: 1rem;
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -75,26 +80,25 @@ button:hover {
 a {
   color: var(--contrast-color);
 }
-h1, h2 {
-  font-style: normal;
-}
+
 h1 {
-  font-family:  var(--font-family-display);
-  font-weight:lighter;
-  font-size: 1.1rem;
+  font-family:  var(--font-family-display-3);
+  font-weight:900;
+  font-size: 1.0rem;
   color: var(--contrast-color);
   margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 h2 {
-  font-family:  var(--font-family-display);
-  font-weight: 400;
+  font-family:  var(--font-family-display-3);
+  font-weight: 900;
   font-size: 3rem;
   
 }
 
 h3, h4, span {
   color: rgb(240, 240, 240);
-  font-family: var(--font-family-display), sans-serif;
+  font-family: var(--font-family-display-3), sans-serif;
   font-weight: 400;
   margin: 0px;
 }
@@ -119,7 +123,8 @@ nav {
     color: var(--muted-color);
     padding: 0.6rem 0.8rem;
     border: 1px solid transparent;
-    
+    font-family:  var(--font-family-display-3);
+    font-weight: 500;
   }
   nav a:hover {
     border: 1px solid transparent;
@@ -147,7 +152,6 @@ nav {
   .page.active {
     opacity: 1;
     width: -webkit-fill-available;
-    
     animation: appear linear 300ms;
     transition-delay: .2s;
     display: inline-block;
@@ -156,8 +160,7 @@ nav {
   .page h2 {
     line-height: 100%;
     margin: 0;
-    padding: 0;
-    font-weight: 300;
+    padding: 0; 
     font-size: 1.5em;
     background: repeating-linear-gradient(
       45deg,
@@ -180,7 +183,7 @@ nav {
   /*animation: 900ms ease-in expandBG;*/
   display: inline-block;
   padding: 1rem;
- width: 95%;
+  width: 95%;
   }
   .page p { 
     display: inline-block;

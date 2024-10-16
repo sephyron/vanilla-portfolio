@@ -94,7 +94,7 @@ class Modal extends HTMLElement {
   async open(contentUrl) {
     try {
       const response = await fetch(contentUrl);
-      const contentHtml = await response.text();
+      const contentHtml = await response.html();
 
       // Create a div to hold the content
       const contentDiv = document.createElement('div');
