@@ -1,9 +1,14 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const a of o.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function i(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(e){if(e.ep)return;e.ep=!0;const o=i(e);fetch(e.href,o)}})();document.querySelector("page-transition");const r=document.querySelectorAll("nav a"),d=document.querySelectorAll(".page");document.querySelector(".page.active");document.querySelector("nav a.active");r.forEach(n=>{n.addEventListener("click",t=>{t.preventDefault();const i=n.getAttribute("href"),s=document.querySelector(i);d.forEach(e=>e.classList.remove("active")),r.forEach(e=>e.classList.remove("active")),setTimeout(()=>{s.classList.add("active"),n.classList.add("active")},200)})});document.addEventListener("DOMContentLoaded",()=>{[document.getElementById("cards1"),document.getElementById("cards")].forEach(t=>{t.onmousemove=i=>{for(const s of t.querySelectorAll(".card")){const e=s.getBoundingClientRect(),o=i.clientX-e.left,a=i.clientY-e.top;s.style.setProperty("--mouse-x",`${o}px`),s.style.setProperty("--mouse-y",`${a}px`)}}})});const l=document.querySelectorAll(".card"),h=[{title:"Card 1 Title",content:"This is the content for card 1."},{title:"Card 2 Title",content:"This is the content for card 2."},{title:"Card 3 Title",content:"This is the content for card 2."},{title:"Card 4 Title",content:"This is the content for card 2."},{title:"Card 5 Title",content:"This is the content for card 2."},{title:"Card 6 Title",content:"This is the content for card 2."},{title:"Card 7 Title",content:"This is the content for card 2."},{title:"Card 8 Title",content:"This is the content for card 2."},{title:"Card 9 Title",content:"This is the content for card 2."}];l.forEach(n=>{n.addEventListener("click",t=>{t.stopPropagation();const i=n.dataset.cardIndex,s=h[i],e=document.createElement("my-modal");e.innerHTML=`
-      <span slot="content">
-        <h2>${s.title}</h2>
-        <p>${s.content}</p>
-      </span>
-    `,document.body.appendChild(e),e.open()})});class p extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.innerHTML=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const a of o.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function i(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(e){if(e.ep)return;e.ep=!0;const o=i(e);fetch(e.href,o)}})();document.querySelector("page-transition");const r=document.querySelectorAll("nav a"),d=document.querySelectorAll(".page");document.querySelector(".page.active");document.querySelector("nav a.active");r.forEach(n=>{n.addEventListener("click",t=>{t.preventDefault();const i=n.getAttribute("href"),s=document.querySelector(i);d.forEach(e=>e.classList.remove("active")),r.forEach(e=>e.classList.remove("active")),setTimeout(()=>{s.classList.add("active"),n.classList.add("active")},200)})});document.addEventListener("DOMContentLoaded",()=>{[document.getElementById("page1"),document.getElementById("cards1"),document.getElementById("cards")].forEach(t=>{t.onmousemove=i=>{for(const s of t.querySelectorAll(".card")){const e=s.getBoundingClientRect(),o=i.clientX-e.left,a=i.clientY-e.top;s.style.setProperty("--mouse-x",`${o}px`),s.style.setProperty("--mouse-y",`${a}px`)}}})});const l=document.querySelectorAll(".card"),h=[{title:"Card 1 Title",content:"This is the content for card 1.",contentURL:"/about.html"},{title:"Card 2 Title",content:"This is the content for card 2.",contentURL:"/about.html"},{title:"Card 3 Title",content:"This is the content for card 2.",contentURL:"/about.html"},{title:"Card 4 Title",content:"This is the content for card 2.",contentURL:"/about.html"},{title:"Card 5 Title",content:"This is the content for card 2.",contentURL:"/about.html"},{title:"Card 6 Title",content:"This is the content for card 2.",contentURL:"/about.html"},{title:"Card 7 Title",content:"This is the content for card 2.",contentURL:"/about.html"},{title:"Card 8 Title",content:"This is the content for card 2.",contentURL:"/about.html"},{title:"Card 9 Title",content:"This is the content for card 2.",contentURL:"/about.html"}];l.forEach(n=>{n.addEventListener("click",async t=>{t.stopPropagation();const i=n.dataset.cardIndex,s=h[i],e=document.createElement("my-modal");try{const a=await(await fetch(s.contentURL)).text();e.innerHTML=`
+        <span slot="content">
+          <h2>${s.title}</h2>
+          <div>${a}</div> 
+        </span>
+      `}catch(o){console.error("Error fetching content:",o),e.innerHTML=`
+        <span slot="content">
+          <h2>Error</h2>
+          <p>Failed to load content.</p>
+        </span>
+      `}document.body.appendChild(e),e.open()})});class p extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.innerHTML=`
         <style>
           :host {
             display: flex;
@@ -39,9 +44,9 @@
                     margin-bottom: 1rem;
                 }
                 .post h2 {
-                    font-size: 2rem;
+                    font-size: 1.25rem;
+                    font-weight: 300;    
                     character-spacing: 0.1em;
-                    
                 }
                 .post p {
                     padding: 0 1rem;
@@ -50,19 +55,14 @@
                     width: 100%;
                     max-width: 600px;
                 }
-                h1, h2, h3, h4, span {
-                    
-                    font-family: var(--font-family-display), sans-serif;
-                    font-weight: 100;
-                    margin: 0px;
-                  }
+                
                 .post-meta {
                     color: #888;
-                    font-size: 0.9em;
+                    font-size: 0.8em;
                     margin-bottom: 10px;
                 }
                 .post-content {
-                    font-size: 1.1rem;
+                   
                     padding: 1rem;
                 }
                 a {
@@ -73,9 +73,13 @@
                     font-weight: 100;
                 }
                 a:hover {
-                    background-color: #26253c;
+                    background-color: var(--accent-color-1);
                     color: #fff;
                     
+                }
+                #content h1{
+                    font-weight: 300;
+                    font-size: 2rem;
                 }
             </style>
             
@@ -169,4 +173,4 @@
       <slot name="content"></slot>
     </div>
   </div>
-`;class u extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.appendChild(c.content.cloneNode(!0)),this.modal=this.shadowRoot.querySelector(".modal"),this.closeBtn=this.shadowRoot.querySelector(".close")}connectedCallback(){this.closeBtn.addEventListener("click",this.close.bind(this))}async open(t){try{const s=await(await fetch(t)).text(),e=document.createElement("div");e.innerHTML=s;const o=this.shadowRoot.querySelector('slot[name="content"]');o.innerHTML="",o.appendChild(e),this.modal.classList.add("fade-in"),this.modal.classList.remove("end")}catch(i){console.error("Error loading modal content:",i)}}close(){this.modal.classList.add("fade-out"),this.modal.classList.add("end")}}customElements.define("my-modal",u);class f extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"});const t=document.createElement("canvas");t.id="particleCanvas",this.shadowRoot.appendChild(t),this.ctx=t.getContext("2d"),this.particles=[],this.particleCount=0,this.resizeHandler=this.onResize.bind(this),this.initParticles=this.initParticles.bind(this),this.animate=this.animate.bind(this)}connectedCallback(){this.onResize(),window.addEventListener("resize",this.resizeHandler),this.initParticles(),this.animate()}disconnectedCallback(){window.removeEventListener("resize",this.resizeHandler)}onResize(){const t=this.shadowRoot.getElementById("particleCanvas");t.width=window.innerWidth,t.height=window.innerHeight,this.particleCount=this.calculateParticleCount(),this.initParticles()}calculateParticleCount(){const t=this.shadowRoot.getElementById("particleCanvas");return Math.floor(t.width*t.height/6e3)}initParticles(){this.particles=[];for(let t=0;t<this.particleCount;t++)this.particles.push(new y(this.ctx,this.shadowRoot.getElementById("particleCanvas")))}animate(){this.ctx.clearRect(0,0,this.shadowRoot.getElementById("particleCanvas").width,this.shadowRoot.getElementById("particleCanvas").height),this.particles.forEach(t=>{t.update(),t.draw()}),requestAnimationFrame(this.animate)}}class y{constructor(t,i){this.ctx=t,this.canvas=i,this.reset(),this.y=Math.random()*this.canvas.height,this.fadeDelay=Math.random()*600+100,this.fadeStart=Date.now()+this.fadeDelay,this.fadingOut=!1}reset(){this.x=Math.random()*this.canvas.width,this.y=Math.random()*this.canvas.height,this.speed=Math.random()/5+.1,this.opacity=1,this.fadeDelay=Math.random()*600+100,this.fadeStart=Date.now()+this.fadeDelay,this.fadingOut=!1}update(){this.y-=this.speed,this.y<0&&this.reset(),!this.fadingOut&&Date.now()>this.fadeStart&&(this.fadingOut=!0),this.fadingOut&&(this.opacity-=.008,this.opacity<=0&&this.reset())}draw(){this.ctx.fillStyle=`rgba(${255-Math.random()*255/2}, 255, 255, ${this.opacity})`,this.ctx.fillRect(this.x,this.y,.4,Math.random()*2+1)}}customElements.define("particle-canvas",f);
+`;class u extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.appendChild(c.content.cloneNode(!0)),this.modal=this.shadowRoot.querySelector(".modal"),this.closeBtn=this.shadowRoot.querySelector(".close")}connectedCallback(){this.closeBtn.addEventListener("click",this.close.bind(this))}async open(t){try{const s=await(await fetch(t)).html(),e=document.createElement("div");e.innerHTML=s;const o=this.shadowRoot.querySelector('slot[name="content"]');o.innerHTML="",o.appendChild(e),this.modal.classList.add("fade-in"),this.modal.classList.remove("end")}catch(i){console.error("Error loading modal content:",i)}}close(){this.modal.classList.add("fade-out"),this.modal.classList.add("end")}}customElements.define("my-modal",u);class f extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"});const t=document.createElement("canvas");t.id="particleCanvas",this.shadowRoot.appendChild(t),this.ctx=t.getContext("2d"),this.particles=[],this.particleCount=0,this.resizeHandler=this.onResize.bind(this),this.initParticles=this.initParticles.bind(this),this.animate=this.animate.bind(this)}connectedCallback(){this.onResize(),window.addEventListener("resize",this.resizeHandler),this.initParticles(),this.animate()}disconnectedCallback(){window.removeEventListener("resize",this.resizeHandler)}onResize(){const t=this.shadowRoot.getElementById("particleCanvas");t.width=window.innerWidth,t.height=window.innerHeight,this.particleCount=this.calculateParticleCount(),this.initParticles()}calculateParticleCount(){const t=this.shadowRoot.getElementById("particleCanvas");return Math.floor(t.width*t.height/6e3)}initParticles(){this.particles=[];for(let t=0;t<this.particleCount;t++)this.particles.push(new y(this.ctx,this.shadowRoot.getElementById("particleCanvas")))}animate(){this.ctx.clearRect(0,0,this.shadowRoot.getElementById("particleCanvas").width,this.shadowRoot.getElementById("particleCanvas").height),this.particles.forEach(t=>{t.update(),t.draw()}),requestAnimationFrame(this.animate)}}class y{constructor(t,i){this.ctx=t,this.canvas=i,this.reset(),this.y=Math.random()*this.canvas.height,this.fadeDelay=Math.random()*600+100,this.fadeStart=Date.now()+this.fadeDelay,this.fadingOut=!1}reset(){this.x=Math.random()*this.canvas.width,this.y=Math.random()*this.canvas.height,this.speed=Math.random()/5+.1,this.opacity=1,this.fadeDelay=Math.random()*600+100,this.fadeStart=Date.now()+this.fadeDelay,this.fadingOut=!1}update(){this.y-=this.speed,this.y<0&&this.reset(),!this.fadingOut&&Date.now()>this.fadeStart&&(this.fadingOut=!0),this.fadingOut&&(this.opacity-=.008,this.opacity<=0&&this.reset())}draw(){this.ctx.fillStyle=`rgba(${255-Math.random()*255/2}, 255, 255, ${this.opacity})`,this.ctx.fillRect(this.x,this.y,.4,Math.random()*2+1)}}customElements.define("particle-canvas",f);

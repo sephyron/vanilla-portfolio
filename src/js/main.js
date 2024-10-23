@@ -36,6 +36,7 @@ navLinks.forEach(link => {
 // Mouse movement
 document.addEventListener('DOMContentLoaded', () => {
   const cardsContainers = [
+    document.getElementById('page1'),
     document.getElementById('cards1'),
     document.getElementById('cards')
   ];

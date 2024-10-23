@@ -1,24 +1,19 @@
 
+@import url("https://fonts.googleapis.com/css?family=Inter:400|Jura:400");
 :root {
   --primary-color: #101720;
   --secondary-color: #0b1114;
   --accent-color-1: #192028;
-  --accent-color-2: #f80759;
+  --accent-color-2: rgba(157, 154, 247, 1);
   --contrast-color: #fff;
   --muted-color: #999;
-  --font-size: 11px;
+  --font-size: 16px;
   --primary-gradient:  linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-  --secondary-gradient: linear-gradient(to right, #f80759, #bc4e9c);
+  --secondary-gradient:  radial-gradient(ellipse at bottom, rgba(157, 154, 247, 0.125) 35%, transparent 70%);
   --border-radius: 3px;
   --font-family-pixel: "Departure Mono Regular";
-  --font-family-display: "Gothic A1";
-  --font-family-display-2: "SUSE";
-  --font-family-display-3: "Titillium Web";
-  --font-family-display-4: "Tomorrow";
-  --font-family-display-5: "Zilla Slab Highlight";
-  --font-family-display-6: "Playwrite CU";
-  --font-family-display-7: "Play";
-  --font-family-display-8: "Chakra Petch";
+  --font-family-display: "Inter";
+  --font-family-display-2: "Jura";
   --bg-color: var(--primary-gradient);
   --card-color: rgba(25, 32, 40, 1);
 }
@@ -41,23 +36,24 @@ html {
 
 }
 body {
-    background: 100% no-repeat var(--primary-gradient);
-    font-family: var(--font-family-display), sans-serif;
-    color: var(--contrast-color);
+  background: 100% no-repeat var(--primary-gradient);
+  font-family: var(--font-family-display), sans-serif;
+  color: var(--contrast-color);
+  
 }
 particle-canvas {
   position: fixed; top: 0; right: 0; left: 0; 
   z-index: -2;
 }
 input {
-    border-radius: var(--border-radius);
-    background-color: var(--secondary-color);
-    color: var(--contrast-color);
-    padding: 0.5rem 0.8rem;
-    border: 0;
-    outline: 0;
-    font-family: var(--font-family-pixel);
-    font-size: 1rem;
+  border-radius: var(--border-radius);
+  background-color: var(--secondary-color);
+  color: var(--contrast-color);
+  padding: 0.5rem 0.8rem;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-family-pixel);
+  font-size: 1rem;
 }
 button {
   border-radius: var(--border-radius);
@@ -66,7 +62,7 @@ button {
   padding: 0.5rem 0.8rem;
   border: 0;
   outline: 0;
-  font-family: var(--font-family-display-3);
+  font-family: var(--font-family-display-2);
   font-size: 1rem;
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -82,25 +78,25 @@ a {
 }
 
 h1 {
-  font-family:  var(--font-family-display-3);
+  font-family:  var(--font-family-display-2);
   font-weight:900;
-  font-size: 1.0rem;
+  font-size: 1rem;
   color: var(--contrast-color);
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
 h2 {
-  font-family:  var(--font-family-display-3);
-  font-weight: 900;
-  font-size: 3rem;
-  
+  font-family:  var(--font-family-display-2);
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 h3, h4, span {
   color: rgb(240, 240, 240);
-  font-family: var(--font-family-display-3), sans-serif;
-  font-weight: 400;
+  font-family: var(--font-family-display-2), sans-serif;
+  font-weight: 300;
   margin: 0px;
+  
 }
 
 i {  
@@ -110,36 +106,75 @@ i {
 nav {
     padding: 0;
     display: flex;
-    justify-content:space-evenly;
+    justify-content:flex-start;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     margin: 0;
-    width: fit-content;
+    
   }
   nav a {
-    margin-right: 0.4rem;
+    margin-right: 1px;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     color: var(--muted-color);
     padding: 0.6rem 0.8rem;
-    border: 1px solid transparent;
-    font-family:  var(--font-family-display-3);
-    font-weight: 500;
+    border-bottom: 2px transparent solid;
+    font-family:  var(--font-family-display-2);
+    font-weight: 300;
+    width: 100px;
   }
   nav a:hover {
-    border: 1px solid transparent;
-    background-color: var(--accent-color-1);
+    border-bottom: 2px transparent solid;
+    
     color: var(--contrast-color);
     cursor: pointer;
   }
   nav a.active {
-    background-color: var(--accent-color-1);
+    background: var(--secondary-gradient);
     color: var(--contrast-color);
+    border-bottom: 2px solid #fff;
+    transition: all .4s ease-in-out;
   }
+  nav ul {
+    padding: 0;
+  }
+  nav ul li {
+    display: inline-flex;
+  }
+  .one:hover ~ hr {
+    margin-left: calc(0px);
+    width: 100px;
+    opacity: 1;
+  }
+  .two:hover ~ hr {
+    margin-left: calc(100px + 4px);
+    width: 100px;
+    opacity: 1;
+  }
+  
+  .three:hover ~ hr {
+    margin-left: 208px;
+    width: 100px;
+    opacity: 1;
+  }
+  
+  .four:hover ~ hr {
+    margin-left: 310px;
+  }
+  
+  hr {
+    height: 1px;
+    opacity: 0;
+    width: 0px;
+    margin: 0;
+    background: var(--accent-color-2);
+    border: none;
+    transition: .3s ease-in-out;
+  }
+
 
   /* pages */
   .page {
-    
     display: none;
     padding: 0;
     margin: 1rem 0;
@@ -161,7 +196,7 @@ nav {
     line-height: 100%;
     margin: 0;
     padding: 0; 
-    font-size: 1.5em;
+    font-size: 1.0em;
     background: repeating-linear-gradient(
       45deg,
       var(--accent-color-1),
@@ -172,51 +207,52 @@ nav {
     /*animation: 600ms ease expandBG;*/
   }
   .page h2 span {
-  background: repeating-linear-gradient(
-    45deg,
-    var(--accent-color-1),
-    var(--accent-color-1) 90%,
-    transparent 90%,
-    transparent 100%
-   
-  );
-  /*animation: 900ms ease-in expandBG;*/
-  display: inline-block;
-  padding: 1rem;
-  width: 95%;
+    background: repeating-linear-gradient(
+      45deg,
+      var(--accent-color-1),
+      var(--accent-color-1) 90%,
+      transparent 90%,
+      transparent 100%
+    
+    );
+    /*animation: 900ms ease-in expandBG;*/
+    display: inline-block;
+    padding: 1rem;
+    width: 95%;
   }
+
   .page p { 
     display: inline-block;
-    padding: 2rem;
+    
     margin: 0;
     width: 100%;
   }
 
   .two-column {
-    display: flex;
-    flex-direction: row;
+
+
     width: 100%;
     margin: 0;
-    
-    
-    
-    padding: 1rem;
+    padding: 0;
   }
 
   .column-right {
-    width: auto;
-
+    width:fit-content;
+    margin-left: 25%;
   }
   .column-left {
-  width: 200px;
-  background: rgba(27, 26, 35, 0.5) url("/public/img/fixed-ai-pfp-solo.png") ;
+    width: 25%;
+    height: 100%;
+  }
+  .column-left .card-image {
+  background: rgba(27, 26, 35, 0.5) url("/public/img/fixed-ai-pfp-blue.png") ;
   background-blend-mode:color-dodge;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
   
-  }
   
   .loader {
     transition: all linear 1300ms;
@@ -234,6 +270,7 @@ nav {
   .slide-in {
     animation: slideIn 0.5s ease-in-out;
   }
+
   @keyframes slideIn {
     from {
       transform: translateX(-100%);
@@ -351,7 +388,7 @@ nav {
 
 .glitch {
   color: var(--contrast-color);
-  font-size: 1.5rem;
+
   font-weight: 300;
   display: flex;
   flex-direction: column;
@@ -371,7 +408,7 @@ nav {
   font-weight: 300;
   grid-row-start: 1;
   grid-column-start: 1;
-  font-size: 2rem;
+ 
   --stack-height: calc(100% / var(--stacks) - 1px);
   --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
   --clip-top: calc(var(--stack-height) * var(--index));
@@ -416,34 +453,47 @@ nav {
 
 /* Cards */
 
-#cards, .cards {
+#cards, #cards1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;  
   max-width:100%;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.25rem;
   z-index: 0;
 }
 
-#cards:hover > .card::after, .cards:hover > .card::after  {
+#cards:hover > .card::after, #cards1:hover > .card::after  {
   opacity: 1;
 }
 
-.card {
+#cards .card {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.1rem;
   cursor: pointer;
   display: flex;
   height: 240px;
-  min-height: max-content;
   flex-direction: column;
   position: relative;
-  min-width: 100px;
+  min-width: 200px;
   flex-grow: 1;
   max-width: 100%;
   transition: all 0.2s ease-in-out;
 }
+#cards1 .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.1rem;
+  display: flex;
+  pointer-events: none;
+  position: relative;
+  min-height: 50px;
+  height:200px;
+  max-height: 320px;
+  transition: all 0.2s ease-in-out;
+  white-space: wrap;
+  min-width: 100%;
+}
+
 .card:last-child {
   max-width: -webkit-fill-available;
 }
@@ -534,7 +584,7 @@ nav {
   
 
 .card-image > i {
-  font-size: 6em;
+  font-size: 1rem;
   opacity: 0.25;
 }
 
@@ -547,6 +597,7 @@ nav {
 }
 
 .card-info {
+  margin-top: 0.5rem;
   align-items: flex-start;
   display: flex;
   gap: 10px;
@@ -560,14 +611,15 @@ nav {
 }
 
 .card-info-title > h3 {
-  font-size: 1.5em;
-  line-height: 20px;
+  font-size: 1.2em;
+  line-height: 1.2rem;
 }
 
 .card-info-title > h4 {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 1em;
+  font-size: 0.9em;
   margin-top: 8px;
+  line-height: 1.1rem;
 }
 
 /* Responsiveness */
@@ -585,7 +637,7 @@ nav {
     overflow: auto;
   }
   
-  #cards {    
+  #cards, #cards1 {    
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 10px 0px;
@@ -599,12 +651,18 @@ nav {
 }
 
 @media(min-width: 601px) and (max-width: 1000px) {
-  .card {
+  #cards .card {
     height: 220px;
     width: calc(33% - 2%);
     transition: all 0.2s ease-in-out;
   }
-  
+ 
+  #cards1 .card {
+    height:fit-content;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+
   .card-content {
     height: -webkit-fill-available;
   }

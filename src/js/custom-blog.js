@@ -27,9 +27,9 @@ class CustomBlog extends HTMLElement {
                     margin-bottom: 1rem;
                 }
                 .post h2 {
-                    font-size: 2rem;
+                    font-size: 1.25rem;
+                    font-weight: 300;    
                     character-spacing: 0.1em;
-                    
                 }
                 .post p {
                     padding: 0 1rem;
@@ -38,19 +38,14 @@ class CustomBlog extends HTMLElement {
                     width: 100%;
                     max-width: 600px;
                 }
-                h1, h2, h3, h4, span {
-                    
-                    font-family: var(--font-family-display), sans-serif;
-                    font-weight: 100;
-                    margin: 0px;
-                  }
+                
                 .post-meta {
                     color: #888;
-                    font-size: 0.9em;
+                    font-size: 0.8em;
                     margin-bottom: 10px;
                 }
                 .post-content {
-                    font-size: 1.1rem;
+                   
                     padding: 1rem;
                 }
                 a {
@@ -61,9 +56,13 @@ class CustomBlog extends HTMLElement {
                     font-weight: 100;
                 }
                 a:hover {
-                    background-color: #26253c;
+                    background-color: var(--accent-color-1);
                     color: #fff;
                     
+                }
+                #content h1{
+                    font-weight: 300;
+                    font-size: 2rem;
                 }
             </style>
             
