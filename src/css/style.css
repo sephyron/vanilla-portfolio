@@ -1,5 +1,5 @@
 
-@import url("https://fonts.googleapis.com/css?family=Inter:400|Jura:400");
+@import url("https://fonts.googleapis.com/css?family=Inter:400,900|Jura:400,900");
 :root {
   --primary-color: #101720;
   --secondary-color: #0b1114;
@@ -80,15 +80,19 @@ a {
 
 h1 {
   font-family:  var(--font-family-display);
-  font-weight:900;
+  font-weight:400;
   font-size: 1rem;
   color: var(--contrast-color);
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
+h1 span {
+  font-family:  var(--font-family-pixel);
+  font-size: 0.8rem;
+}
 h2 {
   font-family:  var(--font-family-display);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1rem;
 }
 
@@ -182,7 +186,7 @@ nav {
   position: absolute;
   top: -20px;
   left: 0;
-  content: '.navi';
+  content: ' ';
 }
 
 .navi .bar {
@@ -413,8 +417,6 @@ nav {
 
 .glitch {
   color: var(--contrast-color);
-
-  font-weight: 300;
   display: flex;
   flex-direction: column;
 }
@@ -430,10 +432,8 @@ nav {
 }
 
 .stack span {
-  font-weight: 300;
   grid-row-start: 1;
   grid-column-start: 1;
- 
   --stack-height: calc(100% / var(--stacks) - 1px);
   --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
   --clip-top: calc(var(--stack-height) * var(--index));

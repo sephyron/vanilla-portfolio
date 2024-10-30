@@ -15,7 +15,7 @@ class Router extends HTMLElement {
 
   handleRouting() {
     const path = window.location.pathname;
-    const pageId = this.routes.get(path) || 'page1';
+    const pageId = this.routes.get(path) || 'bio';
     this.activatePage(pageId);
     this.updateNavigation(path);
   }

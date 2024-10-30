@@ -4,13 +4,16 @@ const navLinks = document.querySelectorAll('nav a');
 const pages = document.querySelectorAll('.page');
 const selectedPage = document.querySelector('.page.active');
 const selectedLink = document.querySelector('nav a.active');
-/*
+
 navLinks.forEach(link => {
+  const linkText = link.textContent.trim();
+  const slug = `/${linkText.toLowerCase().replace(/\s+/g, '-')}`; // Create slug with 'bio/' prefix
+  link.href = slug; 
+
   link.addEventListener('click', (event) => {
     event.preventDefault(); 
-   
-    const targetId = link.getAttribute('href'); 
-    const targetPage = document.querySelector(targetId);
+    const targetId = link.getAttribute('href').substring(1); // Remove the '#' 
+    const targetPage = document.querySelector(`[id="${targetId}"]`);
 
     // Hide all pages
     pages.forEach(page => page.classList.remove('active'));
@@ -18,25 +21,33 @@ navLinks.forEach(link => {
     // Hide all links
     navLinks.forEach(link => link.classList.remove('active'));
     //selectedLink.classList.remove('active');
-  
-  
-
-    // Show transition
-    //transition.show();
     
+    window.history.pushState({}, '', targetId); 
+    
+    // Scroll to the top with smooth animation
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+    });
+
     setTimeout(() => {
-      targetPage.classList.add('active');
-      link.classList.add('active');
-      //navLinks.forEach(link => link.classList.add('active'));
-      //transition.hide();
+      if (targetPage) {
+        targetPage.classList.add('active');
+        link.classList.add('active');
+      } else {
+        console.error('Target page not found:', targetId);
+      }
     }, 200); 
   });
 });
-*/
+
+
+
+
 // Mouse movement
 document.addEventListener('DOMContentLoaded', () => {
   const cardsContainers = [
-    document.getElementById('page1'),
+    document.getElementById('bio'),
     document.getElementById('cards1'),
     document.getElementById('cards')
   ];
