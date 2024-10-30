@@ -9,7 +9,7 @@
   --muted-color: #999;
   --font-size: 16px;
   --primary-gradient:  linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-  --secondary-gradient:  radial-gradient(ellipse at bottom, rgba(157, 154, 247, 0.125) 35%, transparent 70%);
+  --secondary-gradient:  radial-gradient(ellipse at bottom, rgba(157, 154, 247, 0.125) 55%, transparent 70%);
   --border-radius: 3px;
   --font-family-pixel: "Departure Mono Regular";
   --font-family-display: "Inter";
@@ -28,11 +28,12 @@
 /* base */
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 html { 
     font-size: var(--font-size);
     margin: 0;
-    padding: 1rem 2rem; 
+    padding: 0.25rem; 
 
 }
 body {
@@ -78,7 +79,7 @@ a {
 }
 
 h1 {
-  font-family:  var(--font-family-display-2);
+  font-family:  var(--font-family-display);
   font-weight:900;
   font-size: 1rem;
   color: var(--contrast-color);
@@ -86,7 +87,7 @@ h1 {
   text-transform: uppercase;
 }
 h2 {
-  font-family:  var(--font-family-display-2);
+  font-family:  var(--font-family-display);
   font-weight: 800;
   font-size: 1rem;
 }
@@ -96,13 +97,14 @@ h3, h4, span {
   font-family: var(--font-family-display-2), sans-serif;
   font-weight: 300;
   margin: 0px;
-  
 }
 
 i {  
   color: rgb(240, 240, 240);
 }
+
 /* nav */
+
 nav {
     padding: 0;
     display: flex;
@@ -121,7 +123,7 @@ nav {
     border-bottom: 2px transparent solid;
     font-family:  var(--font-family-display-2);
     font-weight: 300;
-    width: 100px;
+    
   }
   nav a:hover {
     border-bottom: 2px transparent solid;
@@ -130,9 +132,7 @@ nav {
     cursor: pointer;
   }
   nav a.active {
-    background: var(--secondary-gradient);
     color: var(--contrast-color);
-    border-bottom: 2px solid #fff;
     transition: all .4s ease-in-out;
   }
   nav ul {
@@ -141,6 +141,8 @@ nav {
   nav ul li {
     display: inline-flex;
   }
+
+  /*
   .one:hover ~ hr {
     margin-left: calc(0px);
     width: 100px;
@@ -171,6 +173,27 @@ nav {
     border: none;
     transition: .3s ease-in-out;
   }
+*/
+
+.navi {
+  position: relative;
+}
+.navi:before {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  content: '.navi';
+}
+
+.navi .bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90px;
+  height: 2px;
+  background: var(--accent-color-2);
+  transition: all 0.4s;
+}
 
 
   /* pages */
@@ -223,7 +246,9 @@ nav {
 
   .page p { 
     display: inline-block;
-    
+    font-size: 0.85rem;
+    font-weight: lighter;
+    line-height: 1.5;
     margin: 0;
     width: 100%;
   }
